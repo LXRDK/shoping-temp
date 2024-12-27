@@ -3,6 +3,7 @@ import React from "react";
 import { Wand2Icon } from "lucide-react";
 
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 const NotFound = () => {
   return (
@@ -19,7 +20,7 @@ const NotFound = () => {
         })}`}
       >
         {" "}
-        Go TO Dashboard
+        Go to Dashboard
       </Link>
     </div>
   );

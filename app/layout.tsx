@@ -6,7 +6,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { roboto } from "./fonts/fonts";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
-  console.log(roboto.className);
   return (
     <ClerkProvider afterSignOutUrl={"/sign-in"}>
       <html>
