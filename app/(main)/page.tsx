@@ -3,8 +3,12 @@ import { alexFont } from "../fonts/fonts";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ProductCard } from "@/components/ProductCard";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-const Home = () => {
+const Home = async () => {
+  const { userId } = await auth();
+  if (userId) return redirect("/dashboard");
   return (
     <div
       className={` flex flex-col items-center min-h-screen w-full  pl-2 rounded-md bg-slate-200 gap-5 `}
@@ -38,7 +42,7 @@ const Home = () => {
                 Similique laboriosam totam blanditiis. Quas vero sint ab, eaque
               </p>
             </div>
-            <div className="bg-accent-foreground shadow-lg rounded-md text-center flex items-center justify-center md:justify-start pt-3 gap4 text-white flex-col  w-4/5 md:w-[45%] h-full gap-4 text-sm md:text-lg">
+            <div className="bg-accent-foreground pb-1 shadow-lg rounded-md text-center flex items-center justify-center md:justify-start pt-3 gap4 text-white flex-col  w-4/5 md:w-[45%] h-full gap-4 text-sm md:text-lg">
               <h1 className="whitespace-nowrap text-xs md:text-sm">
                 New to the site?{" "}
               </h1>
@@ -57,8 +61,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bg-accent-foreground w-full md:w-[60%] h-60 md:h-screen rounded-md text-lg flex gap-2 items-start justify-around py-3 mb-3 px-3 flex-wrap overflow-scroll">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+        <div className="bg-accent-foreground w-full md:w-[60%] h-60 md:h-screen rounded-md text-lg place-items-center    gap-3   mb-3  grid grid-cols-2 md:grid-cols-4  overflow-scroll p-2">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
             <ProductCard key={item} />
           ))}
         </div>
