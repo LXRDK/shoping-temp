@@ -1,11 +1,14 @@
 import NavBar from "@/components/NavBar";
-import React, { ReactNode } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import React, { ReactNode, Suspense } from "react";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <NavBar />
-      {children}
+      <Suspense fallback={<Skeleton className="w-full h-11"></Skeleton>}>
+        <NavBar />
+        {children}
+      </Suspense>
     </div>
   );
 };

@@ -1,11 +1,13 @@
-"use client";
 import React from "react";
 import { Wand2Icon } from "lucide-react";
 
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { auth } from "@clerk/nextjs/server";
 
-const NotFound = () => {
+const NotFound = async () => {
+  const { userId } = await auth();
+
   return (
     <div className="bg-blue-800 w-full min-h-screen flex flex-col items-center justify-center gap-2 text-white">
       <Wand2Icon size={50} className="animate-bounce ease-in-out" />
@@ -14,13 +16,13 @@ const NotFound = () => {
         Don&apos;t Panic, You Weren&apos;t Supposed to see this{" "}
       </h1>
       <Link
-        href={"/dashboard"}
+        href={userId ? "/dashboard" : "/"}
         className={`text-white font-bold ${buttonVariants({
           variant: "ghost",
         })}`}
       >
         {" "}
-        Go to Dashboard
+        {userId ? "Go to Dashboard" : "Go to Home"}
       </Link>
     </div>
   );
