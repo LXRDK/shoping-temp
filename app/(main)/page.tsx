@@ -23,7 +23,7 @@ const Home = async () => {
         </Link>
       </div>
       <div className="flex items-start justify-around  h-fit rounded-md flex-col md:flex-row w-full gap-5">
-        <div className="bg-accent-foreground w-full md:w-[30%] h-60 rounded-md text-lg flex  items-center justify-center p-2">
+        <div className="bg-accent-foreground w-full lg:w-[30%] h-60 rounded-md text-lg flex  items-center justify-center p-2">
           <div className="bg-slate-200 w-full h-full rounded-md flex flex-col gap-4 md:flex-row  text-slate-800 items-center md:items-start justify-between p-3 ">
             <div className="bg-accent-foreground shadow-lg rounded-md flex text-center  items-center justify-center md:justify-start pt-3 gap4 text-white flex-col w-4/5 md:w-[45%] h-80 md:h-full gap-4 ">
               <h1 className="whitespace-nowrap text-xs md:text-sm">
@@ -61,13 +61,13 @@ const Home = async () => {
             </div>
           </div>
         </div>
-        <div className="bg-accent-foreground  md:w-[60%] rounded-md text-lg flex flex-col items-center justify-center">
+        <div className="bg-accent-foreground w-full  lg:w-[60%] rounded-md text-lg flex flex-col items-center justify-center">
           <h1 className="text-white p-5 text-3xl font-bold">Featured Items</h1>
           <div className=" h-screen w-full   md:h-screen rounded-xl text-lg  gap-3   mb-3  grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-scroll p-2">
             {data.map((item, index) => (
               <ProductCard
                 productName={item.productName}
-                prodId={String(index)}
+                prodId={item.prodId}
                 imageUrl={item.imageUrl}
                 key={index}
               />

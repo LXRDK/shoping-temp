@@ -3,11 +3,12 @@ import { Wand2Icon } from "lucide-react";
 
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 
 const NotFound = async () => {
-  const { userId } = await auth();
-
+  const userId = true;
+  // await auth();
+  //
   return (
     <div className="bg-blue-800 w-full min-h-screen flex flex-col items-center justify-center gap-2 text-white">
       <Wand2Icon size={50} className="animate-bounce ease-in-out" />
