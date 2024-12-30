@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { ProductCard } from "@/components/ProductCard";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-
+import { data } from "@/lib/mockData";
 const Home = async () => {
   const { userId } = await auth();
   if (userId) return redirect("/dashboard");
@@ -61,10 +61,18 @@ const Home = async () => {
             </div>
           </div>
         </div>
-        <div className="bg-accent-foreground w-full md:w-[60%] h-60 md:h-screen rounded-md text-lg place-items-center    gap-3   mb-3  grid grid-cols-2 md:grid-cols-4  overflow-scroll p-2">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-            <ProductCard key={item} />
-          ))}
+        <div className="bg-accent-foreground  md:w-[60%] rounded-md text-lg flex flex-col items-center justify-center">
+          <h1 className="text-white p-5 text-3xl">Featured Items</h1>
+          <div className=" h-screen w-full   md:h-screen rounded-xl text-lg  gap-3   mb-3  grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-scroll p-2">
+            {data.map((item, index) => (
+              <ProductCard
+                productName={item.productName}
+                prodId={String(index)}
+                imageUrl={item.imageUrl}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
