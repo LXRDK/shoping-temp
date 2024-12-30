@@ -62,7 +62,7 @@ const Home = async () => {
           </div>
         </div>
         <div className="bg-accent-foreground  md:w-[60%] rounded-md text-lg flex flex-col items-center justify-center">
-          <h1 className="text-white p-5 text-3xl">Featured Items</h1>
+          <h1 className="text-white p-5 text-3xl font-bold">Featured Items</h1>
           <div className=" h-screen w-full   md:h-screen rounded-xl text-lg  gap-3   mb-3  grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-scroll p-2">
             {data.map((item, index) => (
               <ProductCard

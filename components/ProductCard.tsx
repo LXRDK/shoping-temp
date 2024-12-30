@@ -16,7 +16,7 @@ export function ProductCard({
   return (
     <Link
       href={`/products/${prodId}`}
-      className="group w-[175] h-[175] bg-primary-foreground rounded-md overflow-hidden flex relative border-2 "
+      className="group max-w-[175] max-h-[175] min-w-[175] min-h-[175] bg-primary-foreground rounded-md overflow-hidden flex relative border-2 "
     >
       <img
         className="object-cover transition-all duration-300 ease-in-out group-hover:scale-105 "
