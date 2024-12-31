@@ -1,7 +1,7 @@
 import React from "react";
 import { data } from "@/lib/mockData";
 import ImageComponent from "@/components/ImageComponent";
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 const ProductPage = async ({
   params,
