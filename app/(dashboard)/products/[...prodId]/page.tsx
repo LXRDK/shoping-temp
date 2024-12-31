@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 const ProductPage = async ({
   params,
 }: {
-  params: { prodId: [string] }; // Use the correct typing here
+  params: Promise<{ prodId: [string] }>; // Use the correct typing here
 }) => {
   const { prodId } = await params;
 
