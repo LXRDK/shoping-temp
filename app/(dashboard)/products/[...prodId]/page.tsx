@@ -1,19 +1,24 @@
 import React from "react";
 import { data } from "@/lib/mockData";
 import ImageComponent from "@/components/ImageComponent";
-
-type ProdIdType = {
-  prodId: [string];
-};
+export const dynamic = "force-dynamic";
 
 const ProductPage = async ({
   params,
 }: {
-  params: ProdIdType;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: { prodId: [string] }; // Use the correct typing here
 }) => {
-  const paramsInt = await params;
-  const product = data[parseInt(paramsInt.prodId[0]) - 1];
+  const { prodId } = await params;
+
+  if (!prodId) {
+    console.log("ProdId ot found");
+  }
+
+  const product = data[parseInt(prodId[0]) - 1]; // Fetch product based on prodId
+
+  if (!product) {
+    return <div>Error: Product not found.</div>; // Handle case if product is not found in the data
+  }
 
   return (
     <div className="bg-background h-full flex flex-col md:flex-row drop-shadow-2xl shadow-lg ">
