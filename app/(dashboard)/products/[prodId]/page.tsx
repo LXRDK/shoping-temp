@@ -6,18 +6,22 @@ export const dynamic = "force-dynamic";
 const ProductPage = async ({
   params,
 }: {
-  params: { prodId: [string] }; // Use the correct typing here
+  params: Promise<{ prodId: string }>; // Corrected type
 }) => {
-  const { prodId } = await params;
+  const { prodId } = await params; // No need to await
 
   if (!prodId) {
-    console.log("ProdId ot found");
+    return <div>Error: Product ID not found.</div>;
   }
 
-  const product = data[parseInt(prodId[0]) - 1]; // Fetch product based on prodId
+  const productId = parseInt(prodId); // Convert prodId to a number
+  if (isNaN(productId) || productId < 1 || productId > data.length) {
+    return <div>Error: Invalid product ID.</div>;
+  }
 
+  const product = data[productId - 1]; // Fetch product based on prodId
   if (!product) {
-    return <div>Error: Product not found.</div>; // Handle case if product is not found in the data
+    return <div>Error: Product not found.</div>;
   }
 
   return (
