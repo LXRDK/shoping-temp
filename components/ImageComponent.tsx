@@ -28,16 +28,16 @@ const Controls = () => {
       <Button
         variant="ghost"
         className="text-white border "
-        onClick={() => zoomOut()}
+        onClick={() => resetTransform()}
       >
-        -
+        x
       </Button>
       <Button
         variant="ghost"
         className="text-white border "
-        onClick={() => resetTransform()}
+        onClick={() => zoomOut()}
       >
-        x
+        -
       </Button>
     </div>
   );
@@ -48,7 +48,13 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ productUrl }) => {
       <div className="flex items-center justify-around flex-col relative">
         <Controls />
         <TransformComponent>
-          <Image width={500} height={500} src={productUrl} alt="test" />
+          <Image
+            width={600}
+            height={600}
+            src={productUrl}
+            alt="test"
+            className="rounded-lg"
+          />
         </TransformComponent>
       </div>
     </TransformWrapper>

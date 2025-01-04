@@ -25,8 +25,8 @@ const ProductPage = async ({
   }
 
   return (
-    <div className="bg-background h-full flex flex-col md:flex-row drop-shadow-2xl shadow-lg ">
-      <div className="bg-blue-500/20 h-[500px] md:rounded-xl w-full md:w-1/2 md:m-5 overflow-hidden p-2 flex items-center justify-center">
+    <div className="bg-background h-full flex flex-col md:flex-row drop-shadow-2xl shadow-lg w-full overflow-clip ">
+      <div className="bg-blue-500/20 h-[500px] md:rounded-xl w-full md:w-1/2 md:m-5  overflow-hidden p-2 flex items-center justify-center">
         <ImageComponent productUrl={product.imageUrl} />
       </div>
       <div className="bg-blue-300 h-screen w-full md:w-1/2 p-5">
