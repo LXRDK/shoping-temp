@@ -45,15 +45,15 @@ const Controls = () => {
 const ImageComponent: React.FC<ImageComponentProps> = ({ productUrl }) => {
   return (
     <TransformWrapper>
-      <div className="flex items-center justify-around flex-col relative">
+      <div className="flex items-center justify-around flex-col relative rounded-lg overflow-hidden">
         <Controls />
         <TransformComponent>
           <Image
             width={600}
             height={600}
             src={productUrl}
-            alt="test"
-            className="rounded-lg"
+            alt={productUrl}
+            className="rounded-lg shadow-md"
           />
         </TransformComponent>
       </div>

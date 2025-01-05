@@ -5,7 +5,7 @@ export const data = [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     productName: "Nike Snicker",
     description: "A comfortable and stylish sneaker for all-day wear.",
-    rating: 4.5,
+    rating: 2,
     price: "ETB 1200.99",
     available_sizes: ["6", "7", "8", "9", "10"],
     available_colors: ["Black", "White", "Red"],
