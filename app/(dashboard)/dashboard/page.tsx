@@ -7,10 +7,12 @@ const Dashboard = async () => {
   await auth.protect();
 
   return (
-    <div className="w-full min-h-screen bg-red-500  ">
-      <div className="bg-accent-foreground w-full  lg:w-full rounded-md text-lg flex flex-col items-center justify-center  ">
-        <h1 className="text-white p-5 text-3xl font-bold">Featured Items</h1>
-        <div className="overflow-x-scroll w-screen max-w-screen-xl rounded-xl ">
+    <div className="w-full min-h-screen bg-background py-10">
+      <div className="bg-card w-full max-w-7xl mx-auto rounded-lg shadow-lg p-6">
+        <h1 className="text-3xl font-bold text-foreground text-center mb-8">
+          Featured Items
+        </h1>
+        <div className="overflow-x-auto scroll-smooth hide-scrollbar">
           <ProductWithRating data={data} />
         </div>
       </div>

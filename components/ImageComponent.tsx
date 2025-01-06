@@ -1,40 +1,35 @@
 "use client";
 
 import Image from "next/image";
-
-import React from "react";
-
 import {
   TransformWrapper,
   TransformComponent,
   useControls,
 } from "react-zoom-pan-pinch";
 import { Button } from "./ui/button";
-interface ImageComponentProps {
-  productUrl: string;
-}
+
 const Controls = () => {
   const { zoomIn, zoomOut, resetTransform } = useControls();
 
   return (
-    <div className="transition-all  w-full flex items-center justify-around absolute bottom-2 left-3 z-50 ">
+    <div className="transition-all w-full flex items-center justify-around absolute bottom-2 left-3 z-50">
       <Button
         variant="ghost"
-        className="text-white border "
+        className="text-white border"
         onClick={() => zoomIn()}
       >
         +
       </Button>
       <Button
         variant="ghost"
-        className="text-white border "
+        className="text-white border"
         onClick={() => resetTransform()}
       >
         x
       </Button>
       <Button
         variant="ghost"
-        className="text-white border "
+        className="text-white border"
         onClick={() => zoomOut()}
       >
         -
@@ -42,10 +37,19 @@ const Controls = () => {
     </div>
   );
 };
-const ImageComponent: React.FC<ImageComponentProps> = ({ productUrl }) => {
+
+const ImageComponent = ({
+  productUrl,
+  className,
+}: {
+  productUrl: string;
+  className?: string;
+}) => {
   return (
     <TransformWrapper>
-      <div className="flex items-center justify-around flex-col relative rounded-lg overflow-hidden">
+      <div
+        className={`flex items-center justify-around flex-col relative rounded-lg overflow-hidden ${className}`}
+      >
         <Controls />
         <TransformComponent>
           <Image

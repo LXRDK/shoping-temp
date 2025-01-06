@@ -1,22 +1,17 @@
-import { UserButton } from "@clerk/nextjs";
 import React from "react";
 import { NavMenu } from "./NavMenu";
 import Link from "next/link";
 import { ShoppingCartIcon } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
 
 const NavBar = () => {
   return (
-    <div className="w-full p-4 bg-slate-200 flex justify-around items-center px-5">
-      <Link href="/" className=" md:hidden flex-1  mx-5 flex   ">
-        <div className="flex items-center group justify-center bg-white p-2 rounded-md hover:bg-gradient-to-r hover:from-pink-400 hover:font-bold hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-all duration-300 ease-out">
-          <ShoppingCartIcon />
-          <h1 className="hidden group-hover:block">Go </h1>
-          Home
-        </div>
+    <div className="w-full p-4 bg-slate-200 flex justify-between items-center px-5 sticky top-0 left-0 right-0 z-50">
+      <Link href="/" className="flex items-center text-xl font-bold">
+        <ShoppingCartIcon className="mr-2" />
+        MyEcommerce
       </Link>
-      <div>
-        <NavMenu />
-      </div>
+      <NavMenu />
       <div className="hidden lg:block">
         <UserButton />
       </div>

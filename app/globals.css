@@ -10,8 +10,13 @@ svg.star-svg {
 }
 @layer base {
   :root {
-    --background: 180, 80%, 60%180, 80%, 60%%;
-    --foreground: 240 10% 3.9%;
+    --background: 0 0% 96%; /* #F5F5F5 */
+    --foreground: 0 0% 20%; /* #333333 */
+    --primary: 212 77% 59%; /* #4A76E4 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --accent: 129 59% 41%; /* #28A745 */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -22,8 +27,7 @@ svg.star-svg {
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
